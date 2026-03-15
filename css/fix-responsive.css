@@ -1,0 +1,107 @@
+/* ============================================================
+   JULIETTE'S — PATCH RESPONSIVE
+   À coller à la FIN de style.css ET home.css
+   (ou dans un fichier séparé css/fix-responsive.css
+    que tu linkes après les 2 autres dans index.html)
+   ============================================================ */
+
+/* ──────────────────────────────────────────────────────────
+   BUG 1 — TICKER qui chevauche le logo sur mobile
+   Cause : .navbar est fixed (height: 64px sur mobile) mais
+   .ticker-band est dans le flux normal AVANT le hero.
+   Sur mobile le ticker se retrouve partiellement caché
+   sous la navbar, et le logo overlap le texte du ticker.
+   Fix : pousser le ticker sous la navbar avec padding-top
+   sur le body, ou en rendant la navbar relative au ticker.
+   ────────────────────────────────────────────────────────── */
+
+/* On donne au ticker un z-index supérieur à la navbar
+   ET on le rend sticky juste sous la navbar */
+.ticker-band {
+  position: sticky;
+  top: var(--nav-h); /* colle juste sous la navbar */
+  z-index: 999;      /* juste sous la navbar (z:1000) */
+}
+
+/* Le hero doit tenir compte de navbar + ticker */
+.hero {
+  padding-top: calc(var(--nav-h) + 40px); /* 40px = hauteur ticker */
+}
+
+/* Sur mobile la navbar fait 64px */
+@media (max-width: 768px) {
+  .ticker-band {
+    top: var(--nav-h); /* 64px sur mobile */
+  }
+  .hero {
+    padding-top: calc(var(--nav-h) + 40px);
+  }
+}
+
+
+/* ──────────────────────────────────────────────────────────
+   BUG 2 — Section "Pourquoi nous choisir" déborde à droite
+   Cause 1 : .why-inner { grid-template-columns: 1fr 1fr }
+             sans overflow:hidden sur le parent → la grille
+             de droite (.why-grid 2 colonnes) dépasse l'écran
+   Cause 2 : .why-section n'a pas overflow:hidden
+   Fix : forcer 1 colonne + overflow hidden sur mobile
+   ────────────────────────────────────────────────────────── */
+
+.why-section {
+  overflow: hidden; /* empêche le débordement horizontal */
+}
+
+@media (max-width: 1024px) {
+  /* why-inner passe déjà en 1 col dans home.css ✓
+     mais why-grid reste en 2 cols — on le sécurise */
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
+    width: 100%; /* évite tout débordement */
+  }
+}
+
+@media (max-width: 768px) {
+  .why-inner {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+    overflow: hidden;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 14px;
+  }
+
+  /* Le texte de gauche prend toute la largeur */
+  .why-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Sur très petit écran, 1 seule colonne pour why-grid aussi */
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ──────────────────────────────────────────────────────────
+   BUG 3 — Sécurité générale anti-débordement
+   Les .reveal-right ont un translateX(40px) au départ →
+   ça peut créer un scroll horizontal avant animation
+   ────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .reveal-right,
+  .reveal-left {
+    transform: none !important;
+    opacity: 0;
+  }
+  .reveal-right.visible,
+  .reveal-left.visible {
+    opacity: 1;
+  }
+}

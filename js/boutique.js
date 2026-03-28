@@ -174,18 +174,10 @@ function render() {
   }
 
   emptyState.style.display = 'none';
-  grid.style.opacity = '0';
-  grid.style.transform = 'translateY(8px)';
-
-  setTimeout(() => {
-    grid.innerHTML = slice.map(cardHTML).join('');
-    grid.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-    grid.style.opacity = '1';
-    grid.style.transform = 'translateY(0)';
-    document.querySelectorAll('.prod-desc').forEach(el => {
-      el.style.cssText = 'font-size:0.8rem;color:var(--text-light);margin-bottom:10px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;';
-    });
-  }, 150);
+  grid.innerHTML = slice.map(cardHTML).join('');
+document.querySelectorAll('.prod-desc').forEach(el => {
+  el.style.cssText = 'font-size:0.8rem;color:var(--text-light);margin-bottom:10px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;';
+});
 
   loadMoreWrap.style.display = shown < total ? 'block' : 'none';
 }

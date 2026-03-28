@@ -352,27 +352,7 @@
   .products-grid.list-view .prod-card { grid-template-columns: 1fr; }
   .products-grid.list-view .prod-img { min-height: 180px; border-radius: var(--radius-md) var(--radius-md) 0 0; }
 }
-
-/* Fix : cartes boutique toujours visibles */
-#productsGrid .prod-card {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* Fix reveal dans la boutique */
-.products-grid .prod-card,
-.products-grid .prod-card.reveal,
-.products-grid .prod-card.reveal-left,
-.products-grid .prod-card.reveal-right {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
-}
-
-
-
-
-
+
 
 
 

@@ -243,11 +243,7 @@
   background: var(--charcoal);
   color: var(--white);
 }
-/* Fix : cartes boutique toujours visibles */
-#productsGrid .prod-card {
-  opacity: 1 !important;
-  transform: none !important;
-}
+
 /* PRODUCTS GRID */
 .products-grid {
   display: grid;
@@ -358,6 +354,11 @@
 }
 
 
+/* Fix : cartes boutique toujours visibles */
+#productsGrid .prod-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
 
 
 

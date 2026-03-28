@@ -354,13 +354,15 @@
 }
 
 
-/* Fix : cartes boutique toujours visibles */
-#productsGrid .prod-card {
+/* Fix reveal dans la boutique */
+.products-grid .prod-card,
+.products-grid .prod-card.reveal,
+.products-grid .prod-card.reveal-left,
+.products-grid .prod-card.reveal-right {
   opacity: 1 !important;
   transform: none !important;
+  transition: none !important;
 }
-
-
 
 
 

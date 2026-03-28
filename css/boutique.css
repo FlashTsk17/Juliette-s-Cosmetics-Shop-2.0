@@ -355,6 +355,18 @@
 
 
 
+/* Fix reveal hero boutique */
+.boutique-hero .reveal,
+.boutique-hero .reveal-left,
+.boutique-hero .reveal-right,
+.boutique-hero .section-title,
+.boutique-hero .section-subtitle,
+.boutique-hero .eyebrow,
+.boutique-hero .boutique-hero-stats {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 
 
 

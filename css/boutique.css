@@ -354,23 +354,29 @@
 }
 
 
+/* ============================================================
+   PATCH FINAL — boutique.css
+   À coller à la toute fin du fichier boutique.css
+   (remplace tous les blocs qu'on avait ajoutés avant)
+   ============================================================ */
 
-/* Fix reveal hero boutique */
+/* 1. Hero — tous les éléments toujours visibles */
+.boutique-hero,
+.boutique-hero *,
 .boutique-hero .reveal,
-.boutique-hero .reveal-left,
-.boutique-hero .reveal-right,
-.boutique-hero .section-title,
-.boutique-hero .section-subtitle,
-.boutique-hero .eyebrow,
-.boutique-hero .boutique-hero-stats {
+.boutique-hero .reveal.visible,
+.boutique-hero .delay-1,
+.boutique-hero .delay-2,
+.boutique-hero .delay-3 {
   opacity: 1 !important;
   transform: none !important;
+  transition: none !important;
+  animation: none !important;
 }
 
-
-
-
-
-
-
-
+/* 2. Cartes produits — toujours visibles, pas d'animation */
+.products-grid .prod-card {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}

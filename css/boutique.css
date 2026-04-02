@@ -1,4 +1,5 @@
-/* ============================================================
+
+/* ===========================================================
    BOUTIQUE PAGE — Styles
    ============================================================ */
 
@@ -259,7 +260,7 @@
 
 /* Product Card (extends shared .prod-card) */
 .prod-card {
-  /* animation: card-in 0.4s var(--ease) both; */
+  animation: card-in 0.4s var(--ease) both;
 }
 
 @keyframes card-in {
@@ -352,31 +353,19 @@
   .products-grid.list-view .prod-card { grid-template-columns: 1fr; }
   .products-grid.list-view .prod-img { min-height: 180px; border-radius: var(--radius-md) var(--radius-md) 0 0; }
 }
-
 
-/* ============================================================
-   PATCH FINAL — boutique.css
-   À coller à la toute fin du fichier boutique.css
-   (remplace tous les blocs qu'on avait ajoutés avant)
-   ============================================================ */
+/* Fix : cartes boutique toujours visibles */
+#productsGrid .prod-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
 
-/* 1. Hero — tous les éléments toujours visibles */
-.boutique-hero,
-.boutique-hero *,
-.boutique-hero .reveal,
-.boutique-hero .reveal.visible,
-.boutique-hero .delay-1,
-.boutique-hero .delay-2,
-.boutique-hero .delay-3 {
+/* Fix reveal dans la boutique */
+.products-grid .prod-card,
+.products-grid .prod-card.reveal,
+.products-grid .prod-card.reveal-left,
+.products-grid .prod-card.reveal-right {
   opacity: 1 !important;
   transform: none !important;
   transition: none !important;
-  animation: none !important;
-}
-
-/* 2. Cartes produits — toujours visibles, pas d'animation */
-.products-grid .prod-card {
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
 }

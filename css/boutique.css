@@ -245,23 +245,19 @@
   color: var(--white);
 }
 
-/* PRODUCTS GRID */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  transition: all var(--t-mid);
-}
 
-.products-grid.list-view {
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
 
-/* Product Card (extends shared .prod-card) */
-.prod-card {
-  /* animation: card-in 0.4s var(--ease) both; */
-}
+
+
+
+
+
+
+
+
+
+
+
 
 @keyframes card-in {
   from { opacity: 0; transform: translateY(20px); }

@@ -262,6 +262,9 @@
 .prod-card {
   animation: card-in 0.4s var(--ease) both;
 }
+.prod-card {
+  /* animation: card-in 0.4s var(--ease) both; */
+}
 
 @keyframes card-in {
   from { opacity: 0; transform: translateY(20px); }

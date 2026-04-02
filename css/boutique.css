@@ -260,9 +260,6 @@
 
 /* Product Card (extends shared .prod-card) */
 .prod-card {
-  animation: card-in 0.4s var(--ease) both;
-}
-.prod-card {
   /* animation: card-in 0.4s var(--ease) both; */
 }
 

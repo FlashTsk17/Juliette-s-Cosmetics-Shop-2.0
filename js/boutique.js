@@ -111,11 +111,10 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 2500);
 }
 
-/* ── Share product ─────────────────────────────────────────── */
 function shareProduct(e, id) {
   e.preventDefault();
   e.stopPropagation();
-  const url = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + buildProductURL(id);
+  const url = `https://juliette-s-cosmetics-shop.vercel.app/api/og?id=${id}`;
   if (navigator.share) {
     navigator.share({ url });
   } else {

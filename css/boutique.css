@@ -316,3 +316,29 @@
   .prod-price { font-size:0.9rem; }
   .prod-order-btn { padding:6px 10px; font-size:0.7rem; }
 }
+@media (max-width: 768px) {
+  .boutique-hero-shapes {
+    overflow: hidden;
+  }
+
+  .bh-shape {
+    width: 180px !important;
+    height: 180px !important;
+    filter: blur(50px) !important;
+    opacity: 0.3 !important;
+  }
+
+  .bh-shape-1 {
+    top: -40px !important;
+    left: -40px !important;
+    transform: none !important;
+  }
+
+  .bh-shape-2 {
+    bottom: -40px !important;
+    right: -40px !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+}
